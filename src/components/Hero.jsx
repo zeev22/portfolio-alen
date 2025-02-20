@@ -2,29 +2,32 @@ import React from "react";
 import profilePic from "../assets/profile.png";
 import "../Hero.css";
 
+
 const Hero = () => {
     return (
         <>
-            {/* Navbar */}
-            <nav className="navbar">
-                <a className="title" href="/">Portfolio</a>
-                <ul className="menuItems">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
 
-            {/* Hero Section */}
             <section className="hero-container">
+                <div className="navbar">
+                    <a className="title" href="/">Portfolio</a>
+                    <ul className="menuItems">
+                        <li><a href="#about">About </a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
                 <div className="hero-content">
                     <h1 className="hero-title">Hi, I'm Alen</h1>
                     <p className="hero-description">
-                        I'm a passionate Frontend Developer with experience in creating responsive and user-friendly websites. My focus is on building engaging web experiences that are not only visually appealing but also functional and efficient.
+                    I'm a passionate <strong>UI/UX designer</strong>  and <strong>frontend developer</strong> in the making. Currently, I'm a student exploring the intersection of design and technology, aiming to create visually appealing and user-friendly digital experiences
                     </p>
-                    <a href="mailto:dumalaganale22@gmail.com" className="hero-contactBtn" >Contact Me</a>
+                    <a href="#about" className="hero-contactBtn">Contact Me</a>
+
+
+
                 </div>
+
                 <img className="hero-img" src={profilePic} alt="Hero Image of me" />
                 <div className="hero-topBlur" />
                 <div className="hero-bottomBlur" />
