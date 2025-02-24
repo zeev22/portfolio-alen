@@ -1,6 +1,7 @@
 import React from "react";
 import profilePic from "../assets/profile.png";
 import "../Hero.css";
+import { Link, NavLink } from "react-router-dom";
 
 
 const Hero = () => {
@@ -9,9 +10,9 @@ const Hero = () => {
 
             <section className="hero-container">
                 <div className="navbar">
-                    <a className="title" href="/">Portfolio</a>
+                    <NavLink className="title" to="/">Portfolio</NavLink>
                     <ul className="menuItems">
-                        <li><a href="#about">About </a></li>
+                    <li><NavLink to="/About">About</NavLink></li>
                         <li><a href="#projects">Projects</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
@@ -22,7 +23,7 @@ const Hero = () => {
                     <p className="hero-description">
                     I'm a passionate <strong>UI/UX designer</strong>  and <strong>frontend developer</strong> in the making. Currently, I'm a student exploring the intersection of design and technology, aiming to create visually appealing and user-friendly digital experiences
                     </p>
-                    <a href="#about" className="hero-contactBtn">Contact Me</a>
+                    <NavLink to="/About" className="hero-contactBtn">Learn More</NavLink>
 
 
 
