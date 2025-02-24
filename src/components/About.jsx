@@ -11,7 +11,7 @@ import KotlinIcon from '../assets/kotlin.svg';
 import PhpIcon from '../assets/php.svg';
 import CanvaIcon from '../assets/canva.svg';
 import FigmaIcon from '../assets/figma.svg';
-import PsIcon from '../assets/Ps.svg';
+import PsIcon from '../assets/ps.svg';
 import CookIcon from '../assets/cook.png';
 import CraftIcon from '../assets/craft.png';
 import HobbiesIcon from '../assets/hobbies.svg';
