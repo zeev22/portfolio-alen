@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "../About.css";
 import { NavLink } from "react-router-dom";
 
-// Import Assets
 import AboutIcon from '../assets/me.png';
+import MenuBtn from '../assets/menu.png'; 
 import HtmlIcon from '../assets/html.svg';
 import CssIcon from '../assets/css.svg';
 import JsIcon from '../assets/js.svg';
@@ -17,20 +17,32 @@ import CraftIcon from '../assets/craft.png';
 import HobbiesIcon from '../assets/hobbies.svg';
 
 const About = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
     return (
         <>
             <div className="navbar">
                 <NavLink className="title" to="/">Portfolio</NavLink>
-                <ul className="menuItems">
-                    <li><NavLink to="/Hero">Home</NavLink></li>
-                    <li><NavLink to="#projects">Projects</NavLink></li>
-                    <li><NavLink to="#contact">Contact</NavLink></li>
-                </ul>
+                <div className="menu">
+                    <img 
+                        className="menuBtn"
+                        src={MenuBtn} 
+                        alt="Menu-Button"
+                        onClick={toggleMenu}
+                    />
+                    <ul className={`menuItems ${isMenuOpen ? 'active' : ''}`}>
+                        <li><NavLink to="/Hero" onClick={toggleMenu}>Home</NavLink></li>
+                        <li><NavLink to="#projects" onClick={toggleMenu}>Projects</NavLink></li>
+                        <li><NavLink to="#contact" onClick={toggleMenu}>Contact</NavLink></li>
+                    </ul>
+                </div>
             </div>
 
-         
             <section className="about-container">
-              
                 <div className="intro-container">
                     <div className="intro-left">
                         <img src={AboutIcon} alt="Me working" className="intro-image" />
@@ -38,12 +50,11 @@ const About = () => {
                     <div className="intro-right">
                         <h2 className="intro-title">About Me</h2>
                         <p className="intro-description">
-                        Hi! I'm <strong>Alen Rose C. Dumalagan</strong>, a <strong>BSIT student at Western Mindanao State University</strong> and an aspiring <strong>UI/UX designer</strong> and <strong>frontend developer</strong>. I'm currently exploring the intersection of design and technology, striving to create visually appealing and user-friendly digital experiences.
+                            Hi! I'm <strong>Alen Rose C. Dumalagan</strong>, a <strong>BSIT student at Western Mindanao State University</strong> and an aspiring <strong>UI/UX designer</strong> and <strong>frontend developer</strong>. I'm currently exploring the intersection of design and technology, striving to create visually appealing and user-friendly digital experiences.
                         </p>
                     </div>
                 </div>
 
-              
                 <div className="skills-container">
                     <h3 className="section-title">Technical Skills</h3>
                     <div className="skills-grid">                  
@@ -117,7 +128,7 @@ const About = () => {
                     </div>
                 </div>
 
-                 <div className="cta-container">
+                <div className="cta-container">
                     <h3 className="section-title">Let's Work Together</h3>
                     <p className="section-text">
                         Interested in collaborating or discussing a project? Feel free to reach out! I'm always open to new opportunities and conversations.
