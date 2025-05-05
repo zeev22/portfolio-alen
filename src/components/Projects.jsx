@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import project2 from '../assets/projects/project2.jpg';
-import project3 from '../assets/projects/project3.png';
+
 import project4 from '../assets/projects/project4.png';
 import project5 from '../assets/projects/project5.png';
 import work1 from '../assets/projects/work1.png';
