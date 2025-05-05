@@ -1,0 +1,336 @@
+
+/* Root container with glassmorphism and gradient */
+.event-detail-container {
+    max-width: 1100px;
+    margin: 2.5rem auto;
+    padding: 3.5rem 2.5rem;
+    text-align: center;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(150, 136, 255, 0.15));
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 2rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15), inset 0 0 20px rgba(255, 255, 255, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .event-detail-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 20%, rgba(150, 136, 255, 0.3), transparent 70%);
+    opacity: 0.3;
+    z-index: -1;
+  }
+  
+  .event-detail-container:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2), inset 0 0 30px rgba(255, 255, 255, 0.15);
+  }
+  
+  /* Event title with premium typography */
+  .event-detail-container h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.25rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 2rem;
+    letter-spacing: -0.015em;
+    background: linear-gradient(to right, #9688ff, #5e4bd4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-out;
+  }
+  
+  /* Event date, places, and description with glassmorphism cards */
+  .event-date,
+  .event-places,
+  .event-description {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.7;
+    color: #2a2a2a;
+    margin: 1rem 0;
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(200, 190, 255, 0.15));
+    backdrop-filter: blur(8px);
+    border-radius: 1rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .event-date:hover,
+  .event-places:hover,
+  .event-description:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Strong text styling */
+  .event-date strong,
+  .event-places strong {
+    color: #9688ff;
+    font-weight: 600;
+  }
+  
+  /* Icons with subtle animation */
+  .event-date::before,
+  .event-places::before,
+  .event-description::before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background-size: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .event-date:hover::before,
+  .event-places:hover::before,
+  .event-description:hover::before {
+    transform: scale(1.1);
+  }
+  
+  /* Icon for date */
+  .event-date::before {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%239688ff" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM7 12h2v2H7v-2zm6 0h2v2h-2v-2zm4 0h2v2h-2v-2z"/></svg>');
+  }
+  
+  /* Icon for places */
+  .event-places::before {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%239688ff" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>');
+  }
+  
+  /* Icon for description */
+  .event-description::before {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%239688ff" viewBox="0 0 24 24"><path d="M4 6h16v2H4V6zm0 4h16v2H4v-2zm0 4h16v2H4v-2zm0 4h16v2H4v-2z"/></svg>');
+  }
+  
+  /* Back link with button style and micro-interaction */
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #fff;
+    background: linear-gradient(90deg, #9688ff, #5e4bd4);
+    padding: 0.9rem 2rem;
+    border-radius: 3rem;
+    text-decoration: none;
+    margin-top: 2.5rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: background 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  
+  .back-link:hover {
+    background: linear-gradient(90deg, #5e4bd4, #9688ff);
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .back-link::before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23fff" viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>');
+    background-size: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .back-link:hover::before {
+    transform: translateX(-4px);
+  }
+  
+  /* Fade-in animation for title */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Carousel styles (unchanged) */
+  .photo-gallery {
+    margin: 3rem 0;
+    padding: 0 2rem;
+    perspective: 1000px; /* Adds 3D depth to the carousel */
+    transform-style: preserve-3d;
+  }
+  
+  .photo-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin: 0 1rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 1s ease, opacity 1s ease;
+  }
+  
+  .photo-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.8rem;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* 3D "next" transition */
+  .next-slide-3d {
+    animation: rotate3D 1s ease-in-out;
+  }
+  
+  @keyframes rotate3D {
+    0% {
+      transform: translateZ(-200px) rotateY(45deg);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateZ(0) rotateY(0deg);
+      opacity: 1;
+    }
+  }
+  
+  /* Carousel styles */
+  .slick-slide {
+    padding: 0 1rem;
+  }
+  
+  .slick-dots {
+    margin-top: 1.5rem;
+  }
+  
+  .slick-dots li button:before {
+    font-size: 1.2rem;
+    color: #6a59ff;
+  }
+  
+  .slick-dots li.slick-active button:before {
+    color: #4834d4;
+  }
+  
+  .slick-prev,
+  .slick-next {
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+  }
+  
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 2rem;
+    color: #fff;
+  }
+  
+  .slick-prev {
+    left: 10px;
+  }
+  
+  .slick-next {
+    right: 10px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .event-detail-container {
+      max-width: 90%;
+      padding: 2.5rem 1.5rem;
+      margin: 1.5rem auto;
+    }
+  
+    .event-detail-container h1 {
+      font-size: 2.75rem;
+    }
+  
+    .event-date,
+    .event-places,
+    .event-description {
+      font-size: 1.2rem;
+      padding: 1rem 1.25rem;
+    }
+  
+    .event-date::before,
+    .event-places::before,
+    .event-description::before {
+      width: 24px;
+      height: 24px;
+    }
+  
+    .back-link {
+      font-size: 1.15rem;
+      padding: 0.75rem 1.75rem;
+    }
+  
+    .photo-gallery {
+      padding: 0 1rem;
+    }
+  
+    .photo-card {
+      padding: 1rem;
+      margin: 0 0.5rem;
+    }
+  
+    .slick-prev,
+    .slick-next {
+      width: 30px;
+      height: 30px;
+    }
+  
+    .slick-prev:before,
+    .slick-next:before {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .event-detail-container {
+      padding: 2rem 1rem;
+      margin: 1rem auto;
+    }
+  
+    .event-detail-container h1 {
+      font-size: 2.25rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .event-date,
+    .event-places,
+    .event-description {
+      font-size: 1.1rem;
+      padding: 0.75rem 1rem;
+    }
+  
+    .event-date::before,
+    .event-places::before,
+    .event-description::before {
+      width: 20px;
+      height: 20px;
+    }
+  
+    .back-link {
+      font-size: 1rem;
+      padding: 0.6rem 1.5rem;
+    }
+  
+    .photo-card {
+      margin: 0 0.3rem;
+    }
+  }
+  
