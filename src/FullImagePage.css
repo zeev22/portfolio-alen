@@ -1,0 +1,95 @@
+/* FullImagePage Styles */
+.full-image-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: #1a1a1a; /* Matches Projects background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 5%;
+    color: #ccc; /* Matches Projects text color */
+  }
+  
+  .full-image-content {
+    width: 100%;
+    max-width: 960px;
+    padding: 20px;
+  }
+  
+  .back-button {
+    display: inline-block;
+    padding: 8px 16px;
+    background: linear-gradient(90deg, #aa367c, #4a2fbd); /* Matches Projects active tab */
+    color: #fff;
+    border: none;
+    border-radius: 50px; /* Matches Projects buttons */
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 16px;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .back-button:hover {
+    background: linear-gradient(90deg, #4a2fbd, #aa367c);
+    transform: translateY(-2px);
+  }
+  
+  .image-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #fff; /* Matches Projects titles */
+    text-transform: uppercase;
+  }
+  
+  .full-image {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 20px; /* Matches Projects project-card */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .no-image-message {
+    font-size: 20px;
+    color: #ccc; /* Matches Projects no-projects */
+    text-align: center;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .full-image-content {
+      padding: 15px;
+    }
+  
+    .image-title {
+      font-size: 20px;
+    }
+  
+    .back-button {
+      padding: 10px 16px;
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .full-image-container {
+      padding: 20px 5%;
+    }
+  
+    .back-button {
+      padding: 8px 12px;
+      font-size: 12px;
+    }
+  
+    .image-title {
+      font-size: 18px;
+    }
+  
+    .no-image-message {
+      font-size: 16px;
+    }
+  }
